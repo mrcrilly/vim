@@ -6,6 +6,7 @@ filetype off
 
 " TODO: Load plugins here (pathogen or vundle)
 execute pathogen#infect()
+let g:neocomplete#enable_at_startup = 1
 
 " Turn on syntax highlighting
 syntax on
@@ -100,4 +101,20 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
-colorscheme solarized
+colorscheme molokai
+
+" keyboard shortcuts
+map <leader>n :NERDTreeToggle<CR>
+
+" keyboard mappings
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+nmap <F8> :TagbarToggle<CR>
+
+au FileType go nmap <leader>gr <Plug>(go-run)
+au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <leader>gt <Plug>(go-test)
+au FileType go nmap <leader>gc <Plug>(go-coverage)
