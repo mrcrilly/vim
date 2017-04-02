@@ -7,6 +7,7 @@ call vundle#begin()
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'https://github.com/kien/ctrlp.vim'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -57,8 +58,11 @@ let g:ctrlp_working_path_mode = 'r'
 
 nmap <leader>p :CtrlP<CR>
 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 " From here we're working from my twisted mind:
 " window controls
 nmap <leader>ws :split<CR>
 nmap <leader>wc :q<CR>
-
+set laststatus=2
