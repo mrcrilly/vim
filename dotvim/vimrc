@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'vim-airline/vim-airline'
+Plugin 'https://github.com/kien/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -61,7 +62,3 @@ nmap <leader>p :CtrlP<CR>
 nmap <leader>ws :split<CR>
 nmap <leader>wc :q<CR>
 
-" Load external bundles and stuff
-" I aint using Vundle because it's another cog
-" I can't be bothered understanding
-set runtimepath^=~/.vim/bundle/ctrlp.vim
