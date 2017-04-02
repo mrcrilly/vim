@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'vim-airline/vim-airline'
+Bundle 'chase/vim-ansible-yaml'
 
 call vundle#end()
 filetype plugin indent on
