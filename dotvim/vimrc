@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'vim-airline/vim-airline'
 Plugin 'https://github.com/kien/ctrlp.vim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'jeetsukumaran/vim-buffergator'
 
 call vundle#end()
 filetype plugin indent on
@@ -44,10 +45,16 @@ colorscheme solarized
 " http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 " tab controls
 nmap <leader>tn :enew<CR>
-nmap <leader>tl :bnext<CR>
-nmap <leader>tp :bprevious<CR>
+" nmap <leader>tl :bnext<CR>
+" nmap <leader>tp :bprevious<CR>
 nmap <leader>tc :bp <BAR> bd#<CR>
 nmap <leader>ts :ls<CR>
+
+let g:buffergator_viewport_split_policy = 'R'
+let g:buffergator_suppress_keymaps = 1
+nmap <leader>jj :BuffergatorMruCyclePrev<cr>
+nmap <leader>kk :BuffergatorMruCycleNext<cr>
+nmap <leader>bl :BuffergatorOpen<cr>
 
 " CntrlP bundle related config
 let g:ctrlp_custom_ignore = {
