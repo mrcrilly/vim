@@ -45,8 +45,8 @@ colorscheme solarized
 " http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 " tab controls
 nmap <leader>tn :enew<CR>
-" nmap <leader>tl :bnext<CR>
-" nmap <leader>tp :bprevious<CR>
+nmap <leader>l :bnext<CR>
+nmap <leader>k :bprevious<CR>
 nmap <leader>tc :bp <BAR> bd#<CR>
 nmap <leader>ts :ls<CR>
 
