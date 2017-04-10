@@ -9,6 +9,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'https://github.com/kien/ctrlp.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
