@@ -74,6 +74,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 nmap <leader>ws :split<CR>
 nmap <leader>wc :q<CR>
 set laststatus=2
+set backspace=2
 
 " From: https://superuser.com/questions/163589/switch-buffers-in-vim-without-saving-to-a-currently-modified-file
 set hidden
