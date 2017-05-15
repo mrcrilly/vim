@@ -76,5 +76,8 @@ nmap <leader>wc :q<CR>
 set laststatus=2
 set backspace=2
 
+" From: https://github.com/python-mode/python-mode/issues/56
+set completeopt=longest,menuone
+
 " From: https://superuser.com/questions/163589/switch-buffers-in-vim-without-saving-to-a-currently-modified-file
 set hidden
