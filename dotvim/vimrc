@@ -39,14 +39,10 @@ let g:solarized_termtrans=1
 " wget https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 colorscheme solarized
 
-
 " From here we're working from:
 " http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 " tab controls
 nmap <leader>tn :enew<CR>
-nmap <leader>l :BuffergatorOpen<cr>
-nmap <leader>k :bnext<CR>
-nmap <leader>j :bprevious<CR>
 nmap <leader>tc :bp <BAR> bd#<CR>
 
 let g:buffergator_viewport_split_policy = 'N'
@@ -76,6 +72,16 @@ nmap <leader>wq <C-W><C-J>
 nmap <leader>we <C-W><C-K>
 set laststatus=2
 set backspace=2
+
+" vim-go commands
+nmap <leader>gr :GoRun<CR>
+nmap <leader>gb :GoBuild<CR>
+nmap <leader>gi :GoInstall<CR>
+nmap <leader>gt :GoTest<CR>
+nmap <leader>gl :GoLint<CR>
+nmap <leader>gf :GoFmt<CR>
+
+let g:go_fmt_command = "goimports"
 
 " From: https://github.com/python-mode/python-mode/issues/56
 set completeopt=longest,menuone
