@@ -7,9 +7,7 @@ call vundle#begin()
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'https://github.com/kien/ctrlp.vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on
@@ -24,7 +22,7 @@ filetype off
 syntax on
 filetype plugin indent on
 set modelines=0
-set number
+set number relativenumber
 set ruler
 set visualbell
 set encoding=utf-8
@@ -71,8 +69,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " From here we're working from my twisted mind:
 " window controls
-nmap <leader>ws :split<CR>
+nmap <leader>whs :split<CR>
+nmap <leader>wvs :vsplit<CR>
 nmap <leader>wc :q<CR>
+nmap <leader>wq <C-W><C-J>
+nmap <leader>we <C-W><C-K>
 set laststatus=2
 set backspace=2
 
