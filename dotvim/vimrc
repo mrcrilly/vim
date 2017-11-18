@@ -44,12 +44,8 @@ colorscheme solarized
 " tab controls
 nmap <leader>tn :enew<CR>
 nmap <leader>tc :bp <BAR> bd#<CR>
-
-let g:buffergator_viewport_split_policy = 'N'
-let g:buffergator_suppress_keymaps = 1
-nmap <leader>jj :BuffergatorMruCyclePrev<cr>
-nmap <leader>kk :BuffergatorMruCycleNext<cr>
-nmap <leader>bl :BuffergatorOpen<cr>
+nmap <leader>tr :bprev<CR>
+nmap <leader>ty :bnext<CR>
 
 " CntrlP bundle related config
 let g:ctrlp_custom_ignore = {
