@@ -6,7 +6,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'vim-airline/vim-airline'
-Plugin 'https://github.com/kien/ctrlp.vim'
+"Plugin 'https://github.com/kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
 Plugin 'fatih/vim-go'
 
 call vundle#end()
