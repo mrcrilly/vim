@@ -1,17 +1,12 @@
 " Date: 2017-04-01
 " Author: Michael Crilly
 
-" Vundle related
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'vim-airline/vim-airline'
-"Plugin 'https://github.com/kien/ctrlp.vim'
-Plugin 'junegunn/fzf.vim'
-Plugin 'fatih/vim-go'
-
-call vundle#end()
-filetype plugin indent on
+call plug#begin('~/.vim/plugged')
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'fatih/vim-go', { 'tag': '*' }
+Plug 'vim-airline/vim-airline'
+call plug#end()
 
 " Custom stuff by me
 let mapleader = ","
@@ -48,14 +43,8 @@ nmap <leader>tc :bp <BAR> bd#<CR>
 nmap <leader>tr :bprev<CR>
 nmap <leader>ty :bnext<CR>
 
-" CntrlP bundle related config
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-\}
-let g:ctrlp_working_path_mode = 'r'
-
-nmap <leader>p :CtrlP<CR>
+nmap <leader>p :Files<CR>
+nmap <leader>P :GFile<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
