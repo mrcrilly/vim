@@ -26,7 +26,7 @@ set wrap
 set textwidth=79
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set noexpandtab
 set listchars=tab:▸\ ,eol:¬
 set t_Co=256
 set background=dark
