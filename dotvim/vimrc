@@ -58,8 +58,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 nmap <leader>whs :split<CR>
 nmap <leader>wvs :vsplit<CR>
 nmap <leader>wc :q<CR>
-nmap <leader>wq <C-W><C-J>
-nmap <leader>we <C-W><C-K>
+nmap <leader>wq <C-W><C-H>
+nmap <leader>we <C-W><C-L>
+nmap <leader>ws <C-W><C-J>
+nmap <leader>w2 <C-W><C-K>
+
 set laststatus=2
 set backspace=2
 
