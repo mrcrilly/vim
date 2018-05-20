@@ -4,12 +4,15 @@
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'fatih/vim-go', { 'tag': '*' }
+Plug 'fatih/vim-go', { 'tag': '*', 'do': 'GoUpdateBinaries' }
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'elzr/vim-json'
 Plug 'mileszs/ack.vim'
 Plug 'ludovicchabant/vim-gutentags'
+
+" Only needed here and there
+" Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 call plug#end()
 
 " Custom stuff by me
@@ -26,8 +29,6 @@ set number relativenumber
 set ruler
 set visualbell
 set encoding=utf-8
-set wrap
-set textwidth=79
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
@@ -47,8 +48,10 @@ nmap <leader>tc :bp <BAR> bd#<CR>
 nmap <leader>tr :bprev<CR>
 nmap <leader>ty :bnext<CR>
 
+" Finding files to open
+" Searching existing open buffers
 nmap <leader>p :Files<CR>
-nmap <leader>P :GFile<CR>
+nmap <leader>P :Buffers<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -74,11 +77,15 @@ nmap <leader>gt :GoTest<CR>
 nmap <leader>gl :GoLint<CR>
 nmap <leader>gf :GoFmt<CR>
 
+let g:go_fmt_command = "goimports"
+
 " invisible character switching
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>I :set list!<CR>
 
-let g:go_fmt_command = "goimports"
+" quote stuff easily
+nmap <leader>q' ciw''<Esc>P
+nmap <leader>q" ciw""<Esc>P
 
 " From: https://github.com/python-mode/python-mode/issues/56
 set completeopt=longest,menuone
@@ -92,3 +99,4 @@ let g:gutentags_cache_dir = '~/.vim/gutentags'
   
 " From: https://superuser.com/questions/163589/switch-buffers-in-vim-without-saving-to-a-currently-modified-file
 set hidden
+
