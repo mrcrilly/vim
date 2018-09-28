@@ -10,6 +10,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'elzr/vim-json'
 Plug 'mileszs/ack.vim'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'ekalinin/Dockerfile.vim'
 
 " Only needed here and there
 " Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
