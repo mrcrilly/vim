@@ -30,6 +30,8 @@ set ruler
 set visualbell
 set encoding=utf-8
 set tabstop=4
+set textwidth=0
+set wrapmargin=0
 set shiftwidth=4
 set noexpandtab
 set listchars=tab:▸\ ,eol:¬
@@ -45,6 +47,7 @@ colorscheme solarized
 " tab controls
 nmap <leader>tn :enew<CR>
 nmap <leader>tc :bp <BAR> bd#<CR>
+nmap <leader>tC :bd!<CR>
 nmap <leader>tr :bprev<CR>
 nmap <leader>ty :bnext<CR>
 
@@ -96,7 +99,11 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Gutentags options
 let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.c', '*.cpp', '*.java', '*.pl', '*.py', '*.rb']
 let g:gutentags_cache_dir = '~/.vim/gutentags'
-  
+
+" From https://stackoverflow.com/questions/235439/vim-80-column-layout-concerns
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 " From: https://superuser.com/questions/163589/switch-buffers-in-vim-without-saving-to-a-currently-modified-file
 set hidden
 
