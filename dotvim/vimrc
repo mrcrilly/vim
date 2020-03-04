@@ -4,17 +4,18 @@
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'fatih/vim-go', { 'tag': '*', 'do': 'GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdcommenter'
-Plug 'elzr/vim-json'
+"Plug 'elzr/vim-json'
 Plug 'mileszs/ack.vim'
-Plug 'ludovicchabant/vim-gutentags'
+Plug 'cespare/vim-toml'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'ekalinin/Dockerfile.vim'
-
-" Only needed here and there
-" Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'rust-lang/rust.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 " Custom stuff by me
@@ -29,11 +30,10 @@ filetype plugin indent on
 set modelines=0
 set number relativenumber
 set ruler
-set visualbell
 set encoding=utf-8
+set wrap
+set textwidth=100
 set tabstop=4
-set textwidth=0
-set wrapmargin=0
 set shiftwidth=4
 set noexpandtab
 set listchars=tab:▸\ ,eol:¬
@@ -49,12 +49,9 @@ colorscheme solarized
 " tab controls
 nmap <leader>tn :enew<CR>
 nmap <leader>tc :bp <BAR> bd#<CR>
-nmap <leader>tC :bd!<CR>
 nmap <leader>tr :bprev<CR>
 nmap <leader>ty :bnext<CR>
 
-" Finding files to open
-" Searching existing open buffers
 nmap <leader>p :Files<CR>
 nmap <leader>P :Buffers<CR>
 
@@ -68,9 +65,6 @@ nmap <leader>wvs :vsplit<CR>
 nmap <leader>wc :q<CR>
 nmap <leader>wq <C-W><C-H>
 nmap <leader>we <C-W><C-L>
-nmap <leader>ws <C-W><C-J>
-nmap <leader>w2 <C-W><C-K>
-
 set laststatus=2
 set backspace=2
 
@@ -82,15 +76,11 @@ nmap <leader>gt :GoTest<CR>
 nmap <leader>gl :GoLint<CR>
 nmap <leader>gf :GoFmt<CR>
 
-let g:go_fmt_command = "goimports"
-
 " invisible character switching
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>I :set list!<CR>
 
-" quote stuff easily
-nmap <leader>q' ciw''<Esc>P
-nmap <leader>q" ciw""<Esc>P
+let g:go_fmt_command = "goimports"
 
 " From: https://github.com/python-mode/python-mode/issues/56
 set completeopt=longest,menuone
@@ -98,14 +88,21 @@ set completeopt=longest,menuone
 " Silver Searcher as default searching tool
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" Gutentags options
-let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.c', '*.cpp', '*.java', '*.pl', '*.py', '*.rb']
-let g:gutentags_cache_dir = '~/.vim/gutentags'
-
 " From https://stackoverflow.com/questions/235439/vim-80-column-layout-concerns
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%101v.\+/
+
+" Dart
+let dart_style_guide = 2
+let dart_format_on_save = 1
 
 " From: https://superuser.com/questions/163589/switch-buffers-in-vim-without-saving-to-a-currently-modified-file
 set hidden
+
+" Vim Terraform
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+
+" Vim Markdown
+let g:vim_markdown_folding_disabled=1
 
